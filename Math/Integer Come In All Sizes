@@ -1,0 +1,12 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read the input values
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+# Calculate the result of a^b + c^d
+result = (a ** b) + (c ** d)
+
+# Print the result
+print(result)
