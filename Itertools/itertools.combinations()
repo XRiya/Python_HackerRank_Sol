@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations
+
+# Input the string and integer value
+input_str, size = input().split()
+size = int(size)
+
+# Sort the input string lexicographically
+input_str = ''.join(sorted(input_str))
+
+# Generate and print combinations
+for r in range(1, size + 1):
+    for combo in combinations(input_str, r):
+        print(''.join(combo))
