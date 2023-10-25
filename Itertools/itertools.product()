@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import product
+
+# Input
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+# Compute the Cartesian product
+result = list(product(A, B))
+
+# Output the sorted tuples
+for item in result:
+    print(item, end=' ')
