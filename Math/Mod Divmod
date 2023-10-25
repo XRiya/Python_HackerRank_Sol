@@ -1,0 +1,18 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read two integers
+a = int(input())
+b = int(input())
+
+# Calculate the integer division
+integer_division = a // b
+
+# Calculate the modulo operator result
+modulo_result = a % b
+
+# Calculate the divmod result
+divmod_result = divmod(a, b)
+
+# Print the results
+print(integer_division)
+print(modulo_result)
+print(divmod_result)
