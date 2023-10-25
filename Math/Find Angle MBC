@@ -1,0 +1,14 @@
+import math
+
+# Input
+a = float(input())
+b = float(input())
+
+# Calculate the angle in radians using the inverse tangent (arctan) function
+theta_rad = math.atan(b / a)
+
+# Convert radians to degrees and round to the nearest integer
+theta_deg = round(math.degrees(theta_rad))
+
+# Output the result
+print(f'{theta_deg} ',"°")
