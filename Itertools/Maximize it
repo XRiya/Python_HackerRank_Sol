@@ -1,0 +1,18 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import product
+
+# Read inputs
+n, m = map(int, input().split())
+lists = [list(map(int, input().split()))[1:] for _ in range(n)]
+
+# Initialize the maximum value to -1
+max_value = -1
+
+# Iterate through all possible combinations
+for combination in product(*lists):
+    # Calculate the value of the expression and update max_value if needed
+    value = sum(x ** 2 for x in combination) % m
+    max_value = max(max_value, value)
+
+# Print the maximum value
+print(max_value)
