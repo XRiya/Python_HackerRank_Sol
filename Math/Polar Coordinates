@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+import cmath
+
+# Input
+z = complex(input().strip())
+
+# Calculate polar coordinates
+r = abs(z)
+phi = cmath.phase(z)
+
+# Print the results with 3 decimal places
+print(f'{r:.3f}')
+print(f'{phi:.3f}')
