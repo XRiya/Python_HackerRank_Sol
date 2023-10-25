@@ -1,0 +1,15 @@
+from itertools import combinations_with_replacement
+
+# Input the string
+input_str = input().strip()
+
+# Input the integer value for size
+size = int(input())
+
+# Sort the input string lexicographically
+input_str = ''.join(sorted(input_str))
+
+# Generate and print combinations with replacements
+combinations = list(combinations_with_replacement(input_str, size))
+for combo in combinations:
+    print(' '.join(map(str, combo)))
