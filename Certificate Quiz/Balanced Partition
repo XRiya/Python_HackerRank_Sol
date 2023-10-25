@@ -1,0 +1,26 @@
+def mostBalancedPartition(parent, files_size):
+    n = len(parent)
+    children = [[] for _ in range(n)]
+
+    # Create a tree structure (list of children for each directory)
+    for i in range(1, n):
+        children[parent[i]].append(i)
+
+    def dfs(node):
+        subtree_size = files_size[node]
+        for child in children[node]:
+            subtree_size += dfs(child)
+        return subtree_size
+
+    root_size = dfs(0)  # Calculate the size of the entire tree
+
+    # Initialize the minimum absolute difference as infinity
+    min_diff = float('inf')
+
+    # Traverse the tree to find the best partition
+    for i in range(1, n):
+        size1 = dfs(i)  # Calculate the size of the first partition
+        size2 = root_size - size1  # Calculate the size of the second partition
+        min_diff = min(min_diff, abs(size1 - size2))
+
+    return min_diff
