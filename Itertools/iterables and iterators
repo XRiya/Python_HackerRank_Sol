@@ -1,0 +1,19 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations
+
+# Read input
+n = int(input())
+letters = input().split()
+k = int(input())
+
+# Count the number of indices that contain the letter ''
+count_with_letter = letters.count('a')
+
+# Calculate the probability that at least one of the selected indices contains the letter ''
+combinations_total = list(combinations(range(1, n + 1), k))
+combinations_with_letter = [combo for combo in combinations_total if 'a' in [letters[i - 1] for i in combo]]
+
+probability = len(combinations_with_letter) / len(combinations_total)
+
+# Print the probability with 4 decimal places
+print("{:.4f}".format(probability))
